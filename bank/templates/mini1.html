@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* Existing style */
+        #div {
+            text-align: center;
+        }
+
+        /* Additional CSS */
+        body {
+            background-color: #e9f0f7;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #div {
+            margin: 50px auto;
+            padding: 30px;
+            width: 350px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #div p {
+            font-size: 18px;
+            margin: 12px 0;
+            color: #333;
+        }
+
+        #div strong {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div id="div">
+        <p><strong>accno:</strong>{{accno}}</p>
+        <p><strong>name:</strong>{{name}}</p>
+        <p><strong>email:</strong>{{email}}</p>
+        <p><strong>balence:</strong>{{balance}}</p>
+    </div>
+    <script>
+        var data = "{{ msg }}";
+        if (data == "account does not exist") {
+            alert("account does not exist");
+        } else if (data == "invalid pin") {
+            alert("invalid pin");
+        }
+    </script>
+</body>
+</html>

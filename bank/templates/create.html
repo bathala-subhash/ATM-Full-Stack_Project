@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Creation - S Bank</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            font-size: 16px;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        /* Custom CSS for Buttons */
+        .form-group input[type="submit"], .form-group .home-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-align: center;
+            width: auto;
+            margin-right: 10px; /* Adds space between the buttons */
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        
+        /* Hover effect for both buttons */
+        .form-group input[type="submit"]:hover, .form-group .home-button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        /* Focus effect for accessibility */
+        .form-group input[type="submit"]:focus, .form-group .home-button:focus {
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center; /* Centers buttons horizontally */
+            gap: 10px; /* Adds space between the buttons */
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to S Bank - Account Creation</h1>
+    </header>
+
+    <div class="container">
+        <h2>Create a New Account</h2>
+        <form action="#" method="POST" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="accountno">Account Number:</label>
+                <input type="text" id="accountno" name="accountno" required>
+            </div>
+
+            <div class="form-group">
+                <label for="pin">PIN:</label>
+                <input type="password" id="pin" name="pin" required>
+            </div>
+
+            <div class="form-group">
+                <label for="confirm-pin">Confirm PIN:</label>
+                <input type="password" id="confirm-pin" name="confirm-pin" required>
+            </div>
+
+            <div class="button-container">
+                <input type="submit" value="Create Account">
+                <button type="button" class="home-button" onclick="window.location.href='index.html'">Home</button>
+            </div>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 S Bank. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Basic form validation for matching PIN and confirm PIN
+        function validateForm() {
+            var pin = document.getElementById("pin").value;
+            var confirmPin = document.getElementById("confirm-pin").value;
+
+            if (pin !== confirmPin) {
+                alert("PIN and Confirm PIN do not match.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+
+</body>
+</html>
